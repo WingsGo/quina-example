@@ -2,6 +2,8 @@ from quina.widgets import *
 from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout
 from PySide2.QtWidgets import QSizePolicy
 
+pyside2_plugins = os.path.join(os.path.dirname(PySide2.__file__), "plugins")
+QtWidgets.QApplication.addLibraryPath(pyside2_plugins)
 
 class MainWindowController:
     def __init__(self, parent=None):
