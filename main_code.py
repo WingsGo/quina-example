@@ -44,3 +44,4 @@ class MainWindowController:
 if __name__ == '__main__':
     controller = MainWindowController()
     controller.main()
+%LocalAppData%\pip\Cache
