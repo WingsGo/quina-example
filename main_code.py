@@ -61,3 +61,21 @@ if __name__ == '__main__':
 # 12. 从Exception类中派生异常而不是BaseException中派生(这种不能让程序在捕获后还能执行)
 # 13. 捕获异常时要指明异常类型
 # 14. 多条返回语句要保持一致性，即使要显示声明return None
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+database_path = "database.db"
+engine = create_engine("sqlite:///{}".format(database_path), echo=True)
+Base = declarative_base()
+
+
+def create_table():
+    Base.metadata.create_all(engine)
+
+
+def create_session():
+    create_table()
+    session = sessionmaker(bind=engine)
+    return session()
