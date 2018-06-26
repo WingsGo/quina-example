@@ -79,3 +79,6 @@ def create_session():
     create_table()
     session = sessionmaker(bind=engine)
     return session()
+
+http://showmedo.com/videos/video?name=UsingpyWinAutoToControlAWindowsApplication&fromSeriesID=7
+    http://pywinauto.github.io/docs/getting_started.html
